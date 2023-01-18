@@ -286,10 +286,6 @@ table {
   border-spacing: 0;
 }
 
-.clearfix {
-  zoom: 1;
-}
-
 .clearfix:before {
   content: "";
   display: table;
@@ -303,7 +299,7 @@ table {
 
 html {
   font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 a {
@@ -390,8 +386,9 @@ a {
 .nav .nav_menu--open {
   display: none;
   position: absolute;
-  top: 50;
   background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  z-index: 2;
 }
 .nav .nav_menu--open a {
   color: #000;
@@ -445,7 +442,7 @@ a {
     max-height: 600px;
   }
 }
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 750px) {
   .header .header_logo h1 {
     padding-left: 0.5rem;
     font-size: 1.5rem;
@@ -457,7 +454,7 @@ a {
     display: none;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   .header .header_logo h1 {
     font-size: 6vw;
     letter-spacing: 0.45rem;
@@ -467,11 +464,117 @@ a {
     font-size: 6.8vw;
   }
 }
-.dd {
-  height: 70vh;
+.wrap {
   background-color: #eff8ff;
 }
+.wrap .lightbox {
+  background-image: url("../image/water-gcd1408913_1920.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+}
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .wrap .lightbox .filiter {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+.wrap .lightbox .swiper {
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+}
+.wrap .lightbox .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.wrap .lightbox .swiper-slide img {
+  display: block;
+  width: 100%;
+  background-position: center;
+}
+.wrap .about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .about_info {
+  padding: 0rem 1rem;
+  max-width: 900px;
+}
+.wrap .about_info img {
+  width: 12vw;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+.wrap .about_info ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.wrap .about_info li {
+  background-color: white;
+  margin: 0.8rem;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 20px;
+  padding: 1rem 0rem;
+  color: #2e4574;
+  font-weight: bold;
+}
+.wrap .about_info p {
+  text-indent: 2rem;
+  padding: 1rem 0rem;
+  font-size: 1.2rem;
+}
+.wrap .about_info p span {
+  color: #2e4574;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
 
+.about_poto {
+  position: relative;
+  max-width: 750px;
+  background-image: url(../image/dam.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: right;
+}
+.about_poto img {
+  border: 5px solid white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-sizing: border-box;
+  display: block;
+  border-radius: 2%;
+}
+.about_poto .dam {
+  width: 80%;
+  margin: 2rem auto;
+}
+.about_poto h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 420px) {
+  .about_poto h2 {
+    font-size: 1.7rem;
+  }
+}
 .footer {
   display: flex;
   flex-direction: column;
@@ -598,11 +701,12 @@ a {
 .top {
   background-color: #3c5a96;
   position: fixed;
-  bottom: 1rem;
+  bottom: 6%;
   right: 1rem;
   padding: 0.5rem 0.35rem;
   border-radius: 50%;
   transition: 0.5s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .top:hover {
   padding: 0.6rem 0.45rem;
